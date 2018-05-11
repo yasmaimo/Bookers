@@ -1,12 +1,77 @@
-<%= flash[:created] %>
-<%= flash[:updated] %>
+<style>
 
-<p>Title:
-	<%= @book.title %>    
-</p>
+header {
+	height: 70px;
+}
 
-<p class="single-text">Body:
-	<%= @book.body %>    
-</p>
-<%= link_to "Edit", edit_book_path(@book) %>
-<%= link_to "Back", books_path %>
+.header-title {
+	letter-spacing: 0.07em;
+	line-height: 70px;
+}
+
+footer {
+	height: 60px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	line-height: 60px;
+	font-size: 20px;
+}
+
+.footer-title {
+	letter-spacing: 0.07em;
+	margin-left: 20px;
+}
+
+.flash-container {
+	height: 100px;
+}
+
+.flash-container h5 {
+	line-height: 100px;
+}
+
+.show-container {
+	width: 500px;
+	margin: 0 auto;
+}
+
+.btn-container {
+	margin-bottom: 80px;
+}
+
+</style>
+
+<header class="bg-info mw-100">
+	<h1 class="header-title text-center text-white">Bookers</h1>
+</header>
+
+<body>
+	<div class="flash-container">
+		<h5 class="text-center text-success font-weight-bold"><%= flash[:created] %></h5>
+		<h5 class="text-center text-primary font-weight-bold"><%= flash[:updated] %></h5>
+	</div>
+
+	<div class="show-container">
+		<div class="card">
+			<div class="card-body">
+				<p class="card-text text-secondary">Title:</p>
+				<h5 class="card-title"><%= @book.title %></h5>
+				<p class="card-text text-secondary pt-4">Body:</p>
+				<p class="card-text"><%= @book.body %></p>
+				<p class="card-text"><small class="text-muted"><%= @book.created_at %></small></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="btn-container text-center">
+		<%= link_to "Edit", edit_book_path(@book), class: "d-inline-block font-weight-bold mt-5 py-2 px-3 mx-auto btn-outline-info rounded" %>
+		<%= link_to "Back", books_path, class: "d-inline-block font-weight-bold mt-5 py-2 px-3 mx-auto btn-outline-secondary rounded" %>
+	</div>
+</body>
+
+<footer class="bg-info">
+		<p class="footer-title text-left text-white font-weight-bold">Bookers</p>
+		<p></p>
+		<p></p>
+</footer>
