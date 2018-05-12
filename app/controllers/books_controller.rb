@@ -8,10 +8,6 @@ class BooksController < ApplicationController
   	  @book = Book.find(params[:id])
   end
 
-  def new
-  	  @book = Book.new
-  end
-
   def edit
   	  @book = Book.find(params[:id])
   end
@@ -44,6 +40,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-  	  params.require(:book).permit(:title, :body)
+  	  params.require(:book).permit(:title, :body, :id)
   end
 end
