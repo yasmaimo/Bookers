@@ -1,27 +1,21 @@
-<header class="bg-info">
-	<h1 class="header-title">Bookers</h1>
-</header>
+<div style="height: 60px;">
+	<p class="flash-message text-success"><%= flash[:created] %></p>
+	<p class="flash-message text-primary"><%= flash[:updated] %></p>
+</div>
 
-<body class="mw-100">
-	<div style="height: 60px;">
-		<p class="flash-message text-success"><%= flash[:created] %></p>
-		<p class="flash-message text-primary"><%= flash[:updated] %></p>
-	</div>
-
-	<div class="show-container">
-		<div class="card">
-			<div class="card-body">
-				<p class="card-text text-secondary">Title:</p>
-				<h5 class="card-title"><%= @book.title %></h5>
-				<p class="card-text text-secondary pt-4">Body:</p>
-				<p class="card-text"><%= @book.body %></p>
-				<p class="card-text"><small class="text-muted"><%= @book.created_at %></small></p>
-			</div>
+<div class="show-container">
+	<div class="card">
+		<div class="card-body">
+			<p class="card-text text-secondary">Title:</p>
+			<h5 class="card-title"><%= @book.title %></h5>
+			<p class="card-text text-secondary pt-4">Body:</p>
+			<p class="card-text"><%= @book.body %></p>
+			<p class="card-text"><small class="text-muted"><%= @book.created_at %></small></p>
 		</div>
 	</div>
+</div>
 
-	<div class="btn-container text-center">
-		<%= link_to "Edit", edit_book_path(@book), class: "d-inline-block font-weight-bold mt-5 py-2 px-3 mx-auto btn-outline-info rounded" %>
-		<%= link_to "Back", books_path, class: "d-inline-block font-weight-bold mt-5 py-2 px-3 mx-auto btn-outline-secondary rounded" %>
-	</div>
-</body>
+<div class="btn-container text-center">
+	<%= link_to "Edit", edit_book_path(@book), class: "d-inline-block font-weight-bold mt-5 py-2 px-3 mx-auto btn-outline-info rounded" %>
+	<%= link_to "Back", books_path, class: "d-inline-block font-weight-bold mt-5 py-2 px-3 mx-auto btn-outline-secondary rounded" %>
+</div>
